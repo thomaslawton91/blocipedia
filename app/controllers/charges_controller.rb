@@ -17,6 +17,10 @@ class ChargesController < ApplicationController
     currency: 'usd'
     )
 
+    if charge["paid"] == true
+      current_user.role == 1
+    end
+
     flash[:notice] = "Thank you for joining and supporting Blocipedia, #{current_user.email}!"
     redirect_to edit_user_registration_path(current_user) # or wherever
 
