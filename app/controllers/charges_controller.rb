@@ -18,10 +18,12 @@ class ChargesController < ApplicationController
     )
 
     if charge["paid"] == true
-      current_user.role == 1
+      current_user.role = 1
+      current_user.save!
     end
 
-    flash[:notice] = "Thank you for joining and supporting Blocipedia, #{current_user.email}!"
+
+    flash[:notice] = "Thank you for joining and supporting Blocipedia!"
     redirect_to edit_user_registration_path(current_user) # or wherever
 
     # Stripe will send back CardErrors, with friendly messages
@@ -36,8 +38,15 @@ class ChargesController < ApplicationController
     @stripe_btn_data = {
       key: ENV['STRIPE_PUBLISHABLE_KEY'],
       description: "Premium Membership - #{current_user.email}",
-      amount: @amount
+      amount: @amount,
+      email: "#{current_user.email}"
     }
+
+  end
+
+  def cancel
+    current_user.role = 0
+    current_user.save!
   end
 
 end

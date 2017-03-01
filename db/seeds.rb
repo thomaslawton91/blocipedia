@@ -24,7 +24,7 @@ users = User.all
   )
 end
 
-me = User.create(
+User.create(
 email: 'thomaslawton91@gmail.com',
 password: '111111'
 )
