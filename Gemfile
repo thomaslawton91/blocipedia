@@ -12,15 +12,17 @@ group :development do
   gem 'sqlite3'
 end
 
+gem 'stripe'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass'
-gem 'figaro'
+gem 'figaro', '1.0'
 gem 'devise'
 gem 'pundit'
+
 
 group :development, :test do
   gem 'byebug'
