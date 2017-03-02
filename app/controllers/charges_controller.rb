@@ -22,7 +22,6 @@ class ChargesController < ApplicationController
       current_user.save!
     end
 
-
     flash[:notice] = "Thank you for joining and supporting Blocipedia!"
     redirect_to edit_user_registration_path(current_user) # or wherever
 

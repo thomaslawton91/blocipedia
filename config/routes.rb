@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :wikis
   resources :charges, only: [:new, :create]
+  patch "charges/cancel" => "charges#cancel"
 
   # Example resource route with options:
   #   resources :products do

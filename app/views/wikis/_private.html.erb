@@ -1,0 +1,26 @@
+<% if user_is_authorized_for_private %>
+  <div class="media-body">
+    <h4 class="media-heading">
+      <%= link_to wiki.title, wiki %>
+    </h4>
+    <small>
+      <%= wiki.body %>
+    </small>
+  </div>
+<% else %>
+  <div class="media-body">
+    <h4 class="media-heading">
+      <% if wiki.private? %>
+        <%= link_to wiki.title, wiki %>
+      <% else %>
+      <p>Private</p>
+      <% end %>
+    </h4>
+    <small>
+      <% if wiki.private? %>
+        <%= wiki.body %>
+      <% else %>
+      <% end %>
+    </small>
+  </div>
+<% end %>
