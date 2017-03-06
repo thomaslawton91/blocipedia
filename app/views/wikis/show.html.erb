@@ -11,3 +11,10 @@
       <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
     </div>
 </div>
+
+<div class="row">
+  <div class="col-md-8">
+    <p>Collaborators</p>
+    <p><%= @wiki.collaborators %></p>
+  </div>
+</div>

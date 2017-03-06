@@ -1,0 +1,5 @@
+<%= form_for @collaborator do |f| %>
+  <div class="form-group">
+    <%= f.select :user_id, User.pluck(:email) %>
+  </div>
+<% end %>

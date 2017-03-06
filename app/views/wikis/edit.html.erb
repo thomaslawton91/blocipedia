@@ -22,6 +22,9 @@
       <div class="form-group">
         <%= f.label :private, class: 'checkbox' do %>
           <%= f.check_box :private %> Private topic
+      </div>
+      <div>
+        <%= f.collection_select :collaborator, User.order(:email), :id, :email %>
         <% end %>
       </div>
       <%= f.submit "Save", class: 'btn btn-success' %>
