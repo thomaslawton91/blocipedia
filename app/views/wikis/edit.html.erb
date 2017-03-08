@@ -24,7 +24,7 @@
           <%= f.check_box :private %> Private topic
       </div>
       <div>
-        <%= f.collection_select :collaborator, User.order(:email), :id, :email %>
+        <%= f.collection_select :collaborators, @wiki.possible_collaborators, :id, :email %>
         <% end %>
       </div>
       <%= f.submit "Save", class: 'btn btn-success' %>

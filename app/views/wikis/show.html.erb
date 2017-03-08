@@ -15,6 +15,8 @@
 <div class="row">
   <div class="col-md-8">
     <p>Collaborators</p>
-    <p><%= @wiki.collaborators %></p>
+    <% @wiki.collab_users.each do |user| %>
+      <p><%= user.email %></p>
+    <% end %>
   </div>
 </div>
