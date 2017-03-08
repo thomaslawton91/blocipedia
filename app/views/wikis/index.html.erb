@@ -4,6 +4,7 @@
   <div class="col-md-8">
     <% @wikis.each do |wiki| %>
       <div class="media">
+        <%= render "private", wiki: wiki %>
         <div class="media-body">
           <h4 class="media-heading">
             <%= link_to markdown(wiki.title), wiki %>
